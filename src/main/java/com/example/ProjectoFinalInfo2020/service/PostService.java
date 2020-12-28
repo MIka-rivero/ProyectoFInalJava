@@ -19,4 +19,6 @@ public interface PostService {
     public void deleteById(Long id);
 
    public List<Post> findByTitle(String title);
+
+    //public List<Post> findNotPublished(Boolean published);
 }

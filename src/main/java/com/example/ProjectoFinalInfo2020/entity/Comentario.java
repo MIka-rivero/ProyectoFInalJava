@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,8 +18,7 @@ public class Comentario {
     private String author;
     @Size (max = 200)
     private String comment;
-    @CreationTimestamp
-    private LocalDateTime fecha;
+    private LocalDate fecha = LocalDate.now();
 
     public Long getId() {
         return id; }
@@ -38,10 +38,10 @@ public class Comentario {
     public void setComment(String comment) {
         this.comment = comment; }
 
-    public LocalDateTime getFecha() {
+    public LocalDate getFecha() {
         return fecha; }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 }

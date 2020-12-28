@@ -4,7 +4,8 @@ package com.example.ProjectoFinalInfo2020.entity;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Entity
 public class Post {
@@ -18,10 +19,12 @@ public class Post {
     private String description;
     private String content;
     private Boolean published;
-    @Column(nullable = false)
-    private String author;
-    @CreationTimestamp
-    private LocalDateTime fecha;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author", referencedColumnName = "id")
+    private Usuario author;
+
+    private LocalDate fecha = LocalDate.now() ;
 
     public Long getId() {
         return id; }
@@ -54,15 +57,15 @@ public class Post {
     public void setPublished(Boolean published) {
         this.published = published; }
 
-    public String getAuthor() {
+    public Usuario getAuthor() {
         return author; }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Usuario author) {
         this.author = author; }
 
-    public LocalDateTime getFecha() {
+    public LocalDate getFecha() {
         return fecha; }
 
-    public void setFecha( LocalDateTime fecha) {
+    public void setFecha( LocalDate fecha) {
         this.fecha = fecha; }
 }

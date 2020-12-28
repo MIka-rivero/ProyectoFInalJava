@@ -2,13 +2,14 @@ package com.example.ProjectoFinalInfo2020.service;
 
 import com.example.ProjectoFinalInfo2020.entity.Usuario;
 import com.example.ProjectoFinalInfo2020.repository.UsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,7 +58,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> findByDate(LocalDateTime fecha) {
-        return userRepository.findByFecha(fecha);
+    @Transactional (readOnly = true)
+    public List<Usuario> findByDate(LocalDate date) {
+        return userRepository.findByDate(date);
     }
+
 }

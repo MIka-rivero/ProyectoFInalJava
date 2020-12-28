@@ -2,12 +2,12 @@ package com.example.ProjectoFinalInfo2020.controller;
 
 import com.example.ProjectoFinalInfo2020.entity.Post;
 
-import com.example.ProjectoFinalInfo2020.entity.Usuario;
 import com.example.ProjectoFinalInfo2020.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -29,8 +29,13 @@ public class PostController {
     @GetMapping("/search")
     public ResponseEntity<?> postPorTitulo (@RequestParam String title) {
         List<Post> postTitulo = postService.findByTitle(title);
-        return new ResponseEntity<>(postTitulo, HttpStatus.OK);
-    }
+        return new ResponseEntity<>(postTitulo, HttpStatus.OK); }
+/*
+    @GetMapping("/searchPublicado")
+    public ResponseEntity<?> postSinPublicar(@RequestParam Boolean published) {
+        List<Post> postSinPublicar = postService.findNotPublished(published);
+        return new ResponseEntity<>(postSinPublicar, HttpStatus.OK); }
+*/
     //crear post
     @PostMapping
     public ResponseEntity<?> crearPost(@RequestBody Post post) {
@@ -47,7 +52,6 @@ public class PostController {
         post.get().setDescription(postDetails.getDescription());
         post.get().setContent(postDetails.getContent());
         post.get().setPublished(postDetails.getPublished());
-        post.get().setAuthor(postDetails.getAuthor());
         return ResponseEntity.status(HttpStatus.CREATED).body(postService.save(post.get()));
     }
 

@@ -1,10 +1,12 @@
 package com.example.ProjectoFinalInfo2020.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class Usuario {
@@ -22,8 +24,10 @@ public class Usuario {
     private String ciudad;
     private String provincia;
     private String pais;
-    @CreationTimestamp
-    private LocalDateTime fecha;
+    private LocalDate date = LocalDate.now();
+
+    @OneToMany
+    private List<Post> posts = new ArrayList<>();
 
     public Long getId() {
         return id; }
@@ -71,10 +75,15 @@ public class Usuario {
     public void setPais(String pais) {
         this.pais = pais; }
 
-    public LocalDateTime getFecha() {
-        return fecha; }
+    public LocalDate getFecha() {
+        return date; }
 
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha; }
+    public void setFecha(LocalDate date) {
+        this.date = date; }
+
+    public void addPost(Post post) {
+        this.posts.add(post);
+        post.setAuthor(this);
+    }
 
 }

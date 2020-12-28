@@ -5,6 +5,7 @@ import com.example.ProjectoFinalInfo2020.entity.Comentario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -18,4 +19,5 @@ public interface ComentarioService {
     public Comentario save(Comentario comentario);
 
     public void deleteById(Long id);
+
 }

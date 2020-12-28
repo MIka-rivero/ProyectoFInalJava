@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "3061e55a-8ab5-489f-bc03-210ad8dfef60",
+		"name": "ProjectoFinalInfo2020",
+		"description": "Proyecto final Informatorio 2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Get Usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"mario\",\r\n    \"apellido\":\"Enrique\",\r\n    \"email\":\"enriquemario@gmail.com\",\r\n    \"password\":\"12345\", \r\n    \"ciudad\":\"resistencia\",\r\n    \"provincia\":\"chaco\",\r\n    \"pais\":\"argentina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuario"
+							]
+						},
+						"description": "Getter for \"Usuario\""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"maria\",\r\n    \"apellido\": \"gomez\",\r\n    \"email\":\"mary@gmail.com\",\r\n    \"password\":\"123\",\r\n    \"ciudad\":\"Resistencia\",\r\n    \"provincia\":\"Chaco\",\r\n    \"pais\":\"Argentina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/usuario/2/post",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"2",
+								"post"
+							]
+						},
+						"description": "Creaing a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Uusario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/usuario/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"9"
+							]
+						},
+						"description": "Deleting a user"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 7,\r\n        \"name\": \"Ramiro\",\r\n        \"apellido\": \"Romero\",\r\n        \"email\": \"rola@gmail.com\",\r\n        \"ciudad\": \"Resistencia\",\r\n        \"provincia\": \"Chaco\",\r\n        \"pais\": \"Argentina\",\r\n        \"fecha\": \"2019-12-31\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/usuario/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"7"
+							]
+						},
+						"description": "Put for \"Usuario\""
+					},
+					"response": []
+				}
+			],
+			"description": "Http verbs: Get, Post and Delete for \"Usuario\""
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Busqueda de trabajo\",\r\n    \"description\":\"Busqueda de trabajo de profesora\",\r\n    \"content\":\"busco trabajo de profesora de ingles\",\r\n    \"published\":true,\r\n    \"author\": \"maria\",\r\n    \"fecha\":\"2020-11-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/post/search?title=BusquedaDeTrabajo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "BusquedaDeTrabajo"
+								}
+							]
+						},
+						"description": "Getter for \"Post\""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"homeoffice\",\r\n    \"description\":\"Busqueda de salon\",\r\n    \"content\":\"alquiler de salon\",\r\n    \"published\":true,\r\n    \"author\": \"mirta\",\r\n    \"fecha\":\"2020-12-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"post"
+							]
+						},
+						"description": "Post for \"Post\""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/post/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"2"
+							]
+						},
+						"description": "Delete for \"Post\""
+					},
+					"response": []
+				},
+				{
+					"name": "Put Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 3,\r\n        \"title\": \"no tiene que ser null\",\r\n        \"description\": \"Busqueda de trabajo de profesora\",\r\n        \"content\": \"busco trabajo de profesora de ingles\",\r\n        \"published\": true,\r\n        \"author\": \"maria\",\r\n        \"fecha\": \"2020-11-10\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/post/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"3"
+							]
+						},
+						"description": "Put for \"Post\""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentario",
+			"item": [
+				{
+					"name": "Get Comentario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/comentario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comentario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Comentario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\":\"mabel\",\r\n    \"comment\":\"Hay vacantes en la escuela 6\",\r\n    \"fecha\":\"2020-11-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/comentario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comentario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comentario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/comentario/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comentario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Comentario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"id\": 3,\r\n        \"author\": \"maria\",\r\n        \"comment\": \"Hay vacantes en la escuela5\",\r\n        \"fecha\": \"2020-10-25\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/comentario/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comentario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Http verbs: Get, Post, Put, Delete for \"Comentario\""
+		}
+	]
+}

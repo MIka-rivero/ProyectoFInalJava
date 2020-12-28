@@ -48,8 +48,15 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Post> findByTitle(String title) {
         return postRepository.findByTitle(title);
     }
+
+    /*@Override
+    @Transactional(readOnly = true)
+    public List<Post> findNotPublished(Boolean published) {
+        return postRepository.findNotPublished(published);
+    }*/
 
 }
